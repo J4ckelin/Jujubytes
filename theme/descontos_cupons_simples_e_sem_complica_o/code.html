@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#4cd7f6","primary":"#3525cd","inverse-on-surface":"#eef0ff","primary-fixed-dim":"#c3c0ff","inverse-primary":"#c3c0ff","surface-container-high":"#e2e7ff","secondary-fixed":"#eaddff","tertiary-fixed":"#acedff","outline":"#777587","background":"#faf8ff","surface-tint":"#4d44e3","surface-container":"#eaedff","on-secondary-fixed-variant":"#5a00c6","secondary":"#712ae2","tertiary":"#00505f","outline-variant":"#c7c4d8","on-primary":"#ffffff","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#3323cc","tertiary-container":"#006a7c","error-container":"#ffdad6","on-secondary":"#ffffff","on-background":"#131b2e","on-tertiary-fixed":"#001f26","surface-dim":"#d2d9f4","primary-fixed":"#e2dfff","on-surface-variant":"#464555","on-secondary-container":"#fffbff","primary-container":"#4f46e5","on-tertiary-fixed-variant":"#004e5c","secondary-fixed-dim":"#d2bbff","error":"#ba1a1a","surface-variant":"#dae2fd","surface-container-highest":"#dae2fd","on-error-container":"#93000a","on-surface":"#131b2e","surface":"#faf8ff","on-error":"#ffffff","surface-container-low":"#f2f3ff","surface-bright":"#faf8ff","inverse-surface":"#283044","on-secondary-fixed":"#25005a","on-primary-container":"#dad7ff","on-tertiary":"#ffffff","secondary-container":"#8a4cfc","on-primary-fixed":"#0f0069","on-tertiary-container":"#93e8ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","margin":"1rem","margin-tablet":"2rem","gutter":"1rem","gutter-desktop":"1.5rem","margin-desktop":"3rem","space-xl":"2.5rem","space-xs":"0.25rem","space-lg":"1.5rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},fontSize:{"label-md":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.02em",fontWeight:"600"}],"body-md":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0em",fontWeight:"400"}],"body-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.01em",fontWeight:"400"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"600"}],"label-sm":["0.6875rem",{lineHeight:"0.875rem",letterSpacing:"0.04em",fontWeight:"700"}],"label-lg":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.01em",fontWeight:"600"}],"headline-lg-mobile":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["1rem",{lineHeight:"1.5rem",letterSpacing:"0em",fontWeight:"400"}],"display-lg":["3rem",{lineHeight:"3.5rem",letterSpacing:"-0.03em",fontWeight:"800"}],"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-lg":["2rem",{lineHeight:"2.5rem",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-6 px-4 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-6"><div class="flex items-center gap-3 px-3"><img alt="Brand logo. - Primary color: #4f46e5
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XOwJ3Ot9bC3XT6LL1aSVdwo9Cmj-p1dDX3j_WbQ0kIAXt2DClsZsxMdx3aquADs8DikuZRmRtQCgTY8o6WMIOP4bQgrKxvFTtVOvIGGKBzjL7bDIjq8sis4Fy73XW4QANa8YTtDzMKC3VG87QjKrvivIV84vB8vxOBcowAE1N0g6cQfVHMJ8n9IxteRBn4gOg4CYmqmsd459bQOUHXuEhYtMRnXD60u2hg1jy_fL4NCkbFRW89f5iY0Yw"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Jujubyte</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-label-lg font-bold rounded-xl"><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant font-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="painel-geral" href="#"><span class="material-symbols-outlined text-xl">dashboard</span>Painel Geral</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant font-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="meus-produtos" href="#"><span class="material-symbols-outlined text-xl">inventory_2</span>Meus Produtos</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant font-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="minhas-vendas" href="#"><span class="material-symbols-outlined text-xl">shopping_bag</span>Minhas Vendas</a><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 transition-colors bg-primary-container text-on-primary font-label-lg font-bold rounded-xl" data-path="descontos-e-ofertas" href="#"><span class="material-symbols-outlined text-xl">loyalty</span>Descontos &amp; Ofertas</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant font-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="clientes" href="#"><span class="material-symbols-outlined text-xl">people</span>Clientes</a></nav></div><div class="p-3 bg-surface-container-low rounded-xl flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm">support_agent</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-bold">Precisa de Ajuda?</span><span class="font-body-sm text-body-sm text-on-surface-variant">Suporte descomplicado</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-gutter-desktop shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-full max-w-md"><div class="flex items-center w-full bg-surface-container-low rounded-lg px-3 py-2 gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-xl">search</span><input class="bg-transparent border-0 outline-none w-full font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant" placeholder="Pesquisar na minha loja..." type="text"/></div></div><div class="flex items-center gap-4"><a class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md rounded-lg transition-colors" data-path="loja-do-cliente" href="#"><span class="material-symbols-outlined text-lg">storefront</span>Ver Minha Loja (Cliente)</a><div class="flex items-center gap-3 pl-2"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XuLyYraTXkP4vDfA17IEBNTOW5ARmHQH_DT_mBiw7KpKIlikchfIN570Xv_75q2ih1fPEBGhqITFJlKHBqTe0m0AGQxCEKC_HM1QEbD7kdR7lIgrLsof9ZjJDL2I_fKbNt4hHmG4XaJTFpS1F8Bvm7ZZAG04DIi5XlVoGPCKZ3HP7C7AFBHNTxQp1zTI64LODem0a9KVuKgIP9Y5sm0BqzRQhOiD_HbHSaavFeZ28Mw8tkp2jHK7QfgrU"/><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">Loja Jujubyte</span><span class="font-body-sm text-body-sm text-on-surface-variant">Vendedor Oficial</span></div></div></div></header><main class="relative pt-16 bg-background min-h-screen px-margin-desktop py-space-lg"><div class="flex flex-col w-full pb-16">
+<!-- Top Greeting & Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div class="flex flex-col gap-1 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high w-fit text-primary font-label-md text-label-md mb-1">
+<span class="material-symbols-outlined text-sm">local_mall</span>
+        Gestão descomplicada de preços
+      </div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+        Descontos &amp; Promoções
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Crie ofertas temporárias para datas comemorativas ou códigos de desconto para seus clientes usarem no carrinho sem complicação.
+      </p>
+</div>
+<!-- Quick Action Launch Assistant -->
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-5 py-3 rounded-xl shadow-md transition-all active:scale-[0.98]" onclick="document.getElementById('modal-novo-desconto').classList.remove('hidden')">
+<span class="material-symbols-outlined text-xl">add_circle</span>
+        + Criar Cupom ou Oferta
+      </button>
+</div>
+</div>
+<!-- Summary Metric Cards (2 Big Humanized Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop mb-10">
+<!-- Card 1: Ofertas no ar -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-primary/5 rounded-full pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Descontos Automáticos</span>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">sell</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-display-lg text-display-lg font-extrabold text-on-surface leading-none">2</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+            No ar agora
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Suas categorias <strong class="text-on-surface font-semibold">Tecnologia</strong> e o item <strong class="text-on-surface font-semibold">Air Fryer</strong> já estão com preço menor na vitrine para qualquer cliente que entrar.
+        </p>
+</div>
+<div class="mt-6 pt-4 border-t-0 flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-primary font-label-md text-label-md hover:underline font-bold" href="#secao-ofertas">
+          Ver detalhes das 2 ofertas
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Cupons Ativos -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-secondary/5 rounded-full pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Códigos de Carrinho</span>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">confirmation_number</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-display-lg text-display-lg font-extrabold text-on-surface leading-none">3</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">cupons cadastrados</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Códigos prontos para você divulgar em redes sociais, mensagens do WhatsApp e anúncios para impulsionar suas vendas.
+        </p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between gap-4">
+<a class="inline-flex items-center gap-1.5 text-secondary font-label-md text-label-md hover:underline font-bold" href="#secao-cupons">
+          Ver lista de cupons
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-surface-container-highest font-label-md text-label-md transition-colors" onclick="document.getElementById('modal-novo-desconto').classList.remove('hidden')">
+<span class="material-symbols-outlined text-sm">add</span>
+          Novo Cupom
+        </button>
+</div>
+</div>
+</div>
+<!-- SECTION 1: Automatic Store Offers -->
+<section class="mb-12" id="secao-ofertas">
+<div class="bg-surface-container-low rounded-2xl p-6 md:p-8">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+<div class="flex flex-col gap-1 max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">storefront</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+              Ofertas Automáticas no Site (Desconto Direto no Preço)
+            </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Os produtos participantes ficam com o preço original riscado e o novo preço com desconto já aparece na vitrine para o cliente, sem ele precisar digitar nada.
+          </p>
+</div>
+<button class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-primary font-label-md text-label-md rounded-lg shadow-sm hover:shadow transition-all self-start lg:self-auto font-semibold" onclick="document.getElementById('modal-novo-desconto').classList.remove('hidden')">
+<span class="material-symbols-outlined text-lg">bolt</span>
+          Criar Nova Oferta Automática
+        </button>
+</div>
+<!-- Offers Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-desktop">
+<!-- Card Oferta 1: Semana da Tecnologia -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">devices</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Semana da Tecnologia</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aplica em: Toda a categoria de Tecnologia</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                No ar até 15 de Outubro
+              </span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider block">Benefício ao Cliente</span>
+<span class="font-headline-md text-headline-md text-primary font-extrabold">25% DE DESCONTO</span>
+</div>
+<div class="text-right">
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Impacto em vitrine:</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">De R$ 200 por R$ 150</span>
+</div>
+</div>
+<!-- Visual indicator of affected products -->
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-base">info</span>
+<span>18 produtos com preço promocional ativo na loja</span>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 text-on-surface-variant hover:text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base">visibility</span>
+              Ver produtos na loja
+            </button>
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-base">edit</span>
+                Editar
+              </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-error-container hover:opacity-90 text-on-error-container font-label-md text-label-md transition-colors" onclick="confirmPause('Semana da Tecnologia')">
+<span class="material-symbols-outlined text-base">pause</span>
+                Pausar
+              </button>
+</div>
+</div>
+</div>
+<!-- Card Oferta 2: Queima Air Fryer -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">local_fire_department</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Queima Air Fryer</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aplica em: Fritadeira Sem Óleo 4L</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                No ar até 30 de Setembro
+              </span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider block">Benefício ao Cliente</span>
+<span class="font-headline-md text-headline-md text-secondary font-extrabold">20% DE DESCONTO</span>
+</div>
+<div class="text-right">
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Impacto em vitrine:</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">De R$ 349 por R$ 279</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-base">local_shipping</span>
+<span>Conta com selo de Frete Grátis na página</span>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 text-on-surface-variant hover:text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base">visibility</span>
+              Ver item na loja
+            </button>
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-base">edit</span>
+                Editar
+              </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-error-container hover:opacity-90 text-on-error-container font-label-md text-label-md transition-colors" onclick="confirmPause('Queima Air Fryer')">
+<span class="material-symbols-outlined text-base">pause</span>
+                Pausar
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Discount Codes (Cupons de Carrinho) -->
+<section id="secao-cupons">
+<div class="flex flex-col gap-2 mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">loyalty</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+          Códigos de Cupom (Para o Cliente Digitar no Carrinho)
+        </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Envie esses códigos pelo WhatsApp, e-mail ou redes sociais para presentear clientes fiéis ou atrair novos compradores.
+      </p>
+</div>
+<!-- Friendly Coupons List Cards -->
+<div class="flex flex-col gap-4">
+<!-- Cupom 1: BIENVENIDO10 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center gap-5">
+<!-- Code Pill -->
+<div class="flex items-center justify-between sm:justify-start gap-3 bg-surface-container-low px-4 py-3 rounded-xl min-w-[210px]">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Código Cupom</span>
+<span class="font-headline-sm text-headline-sm font-extrabold tracking-wider text-primary">BIENVENIDO10</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors" onclick="copyToClipboard('BIENVENIDO10', this)" title="Copiar código">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">10% de desconto no pedido todo</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+                Ativo
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span>
+                Válido até Dezembro de 2026
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">all_inclusive</span>
+                Usos: Ilimitado por cliente
+              </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-3 lg:pt-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" onclick="shareWhatsApp('BIENVENIDO10', '10% de desconto')">
+<span class="material-symbols-outlined text-base text-primary">share</span>
+            Enviar por WhatsApp
+          </button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all" onclick="copyToClipboard('BIENVENIDO10', this)">
+<span class="material-symbols-outlined text-base">content_copy</span>
+            Copiar Código
+          </button>
+</div>
+</div>
+<!-- Cupom 2: PRIMEIRA15 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center gap-5">
+<!-- Code Pill -->
+<div class="flex items-center justify-between sm:justify-start gap-3 bg-surface-container-low px-4 py-3 rounded-xl min-w-[210px]">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Código Cupom</span>
+<span class="font-headline-sm text-headline-sm font-extrabold tracking-wider text-secondary">PRIMEIRA15</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary text-secondary flex items-center justify-center transition-colors" onclick="copyToClipboard('PRIMEIRA15', this)" title="Copiar código">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">15% de desconto na primeira compra</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+                Ativo
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                Apenas para novos compradores
+              </span>
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-sm">data_usage</span>
+                Usado por 14 de 100 clientes disponíveis
+              </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-3 lg:pt-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" onclick="shareWhatsApp('PRIMEIRA15', '15% de desconto especial')">
+<span class="material-symbols-outlined text-base text-secondary">share</span>
+            Enviar por WhatsApp
+          </button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all" onclick="copyToClipboard('PRIMEIRA15', this)">
+<span class="material-symbols-outlined text-base">content_copy</span>
+            Copiar Código
+          </button>
+</div>
+</div>
+<!-- Cupom 3: DESC20FIXO -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center gap-5">
+<!-- Code Pill -->
+<div class="flex items-center justify-between sm:justify-start gap-3 bg-surface-container-low px-4 py-3 rounded-xl min-w-[210px]">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Código Cupom</span>
+<span class="font-headline-sm text-headline-sm font-extrabold tracking-wider text-primary">DESC20FIXO</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors" onclick="copyToClipboard('DESC20FIXO', this)" title="Copiar código">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">R$ 20,00 de desconto no valor final</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+                Ativo
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span>
+                Válido até Outubro de 2026
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">shopping_basket</span>
+                Valor mínimo do pedido: R$ 100,00
+              </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-3 lg:pt-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" onclick="shareWhatsApp('DESC20FIXO', 'R$ 20,00 de desconto no valor final')">
+<span class="material-symbols-outlined text-base text-primary">share</span>
+            Enviar por WhatsApp
+          </button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all" onclick="copyToClipboard('DESC20FIXO', this)">
+<span class="material-symbols-outlined text-base">content_copy</span>
+            Copiar Código
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Helpful Educational Callout for Store Owner -->
+<div class="mt-12 bg-surface-container-low rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-2xl">tips_and_updates</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Dica amiga para vender mais rápido</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Ofertas automáticas convertem 3x mais que cupons porque o cliente já vê o preço barato de cara. Use cupons quando quiser presentear alguém pelo direct ou recuperar um cliente sumido!
+        </p>
+</div>
+</div>
+<button class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold whitespace-nowrap hover:bg-primary-container transition-colors" onclick="document.getElementById('modal-novo-desconto').classList.remove('hidden')">
+      Experimentar agora
+    </button>
+</div>
+<!-- STEP-BY-STEP CREATION WIZARD MODAL (Friendly, No Jargon) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm" id="modal-novo-desconto">
+<div class="bg-surface-container-lowest rounded-2xl w-full max-w-xl p-6 md:p-8 shadow-xl flex flex-col gap-6 relative max-h-[90vh] overflow-y-auto">
+<!-- Modal Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">magic_button</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-extrabold text-on-surface">Criar Oferta ou Cupom</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors" onclick="document.getElementById('modal-novo-desconto').classList.add('hidden')">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<!-- Step Indicator Bar -->
+<div class="grid grid-cols-3 gap-2">
+<div class="h-1.5 rounded-full bg-primary transition-all" id="step-bar-1"></div>
+<div class="h-1.5 rounded-full bg-surface-container transition-all" id="step-bar-2"></div>
+<div class="h-1.5 rounded-full bg-surface-container transition-all" id="step-bar-3"></div>
+</div>
+<!-- Wizard Step 1: Tipo & Valor do Desconto -->
+<div class="flex flex-col gap-4" id="wizard-step-1">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Passo 1 de 3</span>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface mt-1">Como você quer dar o desconto?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Escolha onde o cliente vai ver a vantagem.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<label class="cursor-pointer p-4 rounded-xl bg-surface-container-low hover:bg-surface-container flex flex-col gap-2 transition-all">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-2xl">sell</span>
+<input checked="" class="accent-primary w-4 h-4" name="tipo_promo" type="radio" value="automatica"/>
+</div>
+<strong class="font-label-lg text-label-lg text-on-surface">Direto no Preço (Automático)</strong>
+<span class="font-body-sm text-body-sm text-on-surface-variant">O preço original já aparece riscado na loja.</span>
+</label>
+<label class="cursor-pointer p-4 rounded-xl bg-surface-container-low hover:bg-surface-container flex flex-col gap-2 transition-all">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-2xl">confirmation_number</span>
+<input class="accent-secondary w-4 h-4" name="tipo_promo" type="radio" value="cupom"/>
+</div>
+<strong class="font-label-lg text-label-lg text-on-surface">Código de Cupom</strong>
+<span class="font-body-sm text-body-sm text-on-surface-variant">O cliente digita uma palavra-chave no carrinho.</span>
+</label>
+</div>
+<div class="flex flex-col gap-1.5 mt-2">
+<label class="font-label-sm text-label-sm text-on-surface font-bold">Qual será o valor do desconto?</label>
+<div class="flex gap-2">
+<input class="bg-surface-container-low rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface outline-none w-full placeholder:text-on-surface-variant" placeholder="Ex: 15" type="number"/>
+<select class="bg-surface-container-low rounded-lg px-3 py-2.5 font-label-md text-label-md text-on-surface outline-none">
+<option value="porcentagem">% Por cento</option>
+<option value="reais">R$ Reais</option>
+</select>
+</div>
+</div>
+<div class="flex justify-end gap-2 mt-4">
+<button class="px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all" onclick="goToStep(2)">
+            Continuar para o Passo 2
+          </button>
+</div>
+</div>
+<!-- Wizard Step 2: Quais Produtos? -->
+<div class="hidden flex flex-col gap-4" id="wizard-step-2">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Passo 2 de 3</span>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface mt-1">Em quais produtos vai valer?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Você decide se quer queimar estoque de um item específico ou incentivar a loja toda.</p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer">
+<input checked="" class="accent-primary w-4 h-4" name="alcance" type="radio" value="todos"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Em todos os produtos da loja</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Qualquer compra recebe a condição especial</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer">
+<input class="accent-primary w-4 h-4" name="alcance" type="radio" value="categoria"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Em uma categoria específica</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Exemplo: Só Tecnologia, Só Moda, etc.</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer">
+<input class="accent-primary w-4 h-4" name="alcance" type="radio" value="produto"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Em apenas um produto específico</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Excelente para queimas pontuais de itens parados</span>
+</div>
+</label>
+</div>
+<div class="flex justify-between items-center gap-2 mt-4">
+<button class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-semibold" onclick="goToStep(1)">
+            Voltar
+          </button>
+<button class="px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all" onclick="goToStep(3)">
+            Continuar para o Passo 3
+          </button>
+</div>
+</div>
+<!-- Wizard Step 3: Até Quando Dura? -->
+<div class="hidden flex flex-col gap-4" id="wizard-step-3">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Passo 3 de 3</span>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface mt-1">Até quando essa promoção dura?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Assim que passar o prazo, o preço volta ao normal sozinho!</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-bold">Dê um apelido fácil para você se organizar</label>
+<input class="bg-surface-container-low rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface outline-none w-full placeholder:text-on-surface-variant" placeholder="Ex: Queima de Estoque de Inverno" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-bold">Data de Término</label>
+<input class="bg-surface-container-low rounded-lg px-4 py-2.5 font-body-md text-body-md text-on-surface outline-none w-full" type="date" value="2026-10-31"/>
+</div>
+<div class="p-3 bg-surface-container rounded-xl flex items-center gap-2.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="font-body-sm text-body-sm">Você pode pausar ou alterar tudo a qualquer momento com 1 clique.</span>
+</div>
+</div>
+<div class="flex justify-between items-center gap-2 mt-4">
+<button class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-semibold" onclick="goToStep(2)">
+            Voltar
+          </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold transition-all shadow-md" onclick="finishWizard()">
+            Ativar Desconto Agora!
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast (Feedback) -->
+<div class="hidden fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-all animate-bounce" id="toast-copiado">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span class="font-label-md text-label-md">Código copiado com sucesso! Só colar no WhatsApp.</span>
+</div>
+</div>
+<script>
+  function copyToClipboard(text, btnElement) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+    }
+    const toast = document.getElementById('toast-copiado');
+    if (toast) {
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3000);
+    }
+  }
+
+  function shareWhatsApp(codigo, textoBeneficio) {
+    const mensagem = encodeURIComponent(`Olá! Use o código de desconto *${codigo}* na nossa loja e ganhe ${textoBeneficio}!`);
+    window.open(`https://api.whatsapp.com/send?text=${mensagem}`, '_blank');
+  }
+
+  function confirmPause(nomePromo) {
+    if (confirm(`Deseja pausar a promoção "${nomePromo}" agora? Ela sairá do ar imediatamente, mas você poderá reativar quando quiser.`)) {
+      alert(`Promoção "${nomePromo}" pausada com sucesso.`);
+    }
+  }
+
+  function goToStep(step) {
+    [1, 2, 3].forEach(s => {
+      const stepEl = document.getElementById(`wizard-step-${s}`);
+      const barEl = document.getElementById(`step-bar-${s}`);
+      if (stepEl && barEl) {
+        if (s === step) {
+          stepEl.classList.remove('hidden');
+          barEl.classList.remove('bg-surface-container');
+          barEl.classList.add('bg-primary');
+        } else {
+          stepEl.classList.add('hidden');
+          if (s > step) {
+            barEl.classList.add('bg-surface-container');
+            barEl.classList.remove('bg-primary');
+          }
+        }
+      }
+    });
+  }
+
+  function finishWizard() {
+    alert('Pronto! Sua nova promoção foi configurada e já está ativa para os seus clientes.');
+    document.getElementById('modal-novo-desconto').classList.add('hidden');
+    goToStep(1);
+  }
+</script></main></div></body></html>

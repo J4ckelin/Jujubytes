@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#4cd7f6","primary":"#3525cd","inverse-on-surface":"#eef0ff","primary-fixed-dim":"#c3c0ff","inverse-primary":"#c3c0ff","surface-container-high":"#e2e7ff","secondary-fixed":"#eaddff","tertiary-fixed":"#acedff","outline":"#777587","background":"#faf8ff","surface-tint":"#4d44e3","surface-container":"#eaedff","on-secondary-fixed-variant":"#5a00c6","secondary":"#712ae2","tertiary":"#00505f","outline-variant":"#c7c4d8","on-primary":"#ffffff","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#3323cc","tertiary-container":"#006a7c","error-container":"#ffdad6","on-secondary":"#ffffff","on-background":"#131b2e","on-tertiary-fixed":"#001f26","surface-dim":"#d2d9f4","primary-fixed":"#e2dfff","on-surface-variant":"#464555","on-secondary-container":"#fffbff","primary-container":"#4f46e5","on-tertiary-fixed-variant":"#004e5c","secondary-fixed-dim":"#d2bbff","error":"#ba1a1a","surface-variant":"#dae2fd","surface-container-highest":"#dae2fd","on-error-container":"#93000a","on-surface":"#131b2e","surface":"#faf8ff","on-error":"#ffffff","surface-container-low":"#f2f3ff","surface-bright":"#faf8ff","inverse-surface":"#283044","on-secondary-fixed":"#25005a","on-primary-container":"#dad7ff","on-tertiary":"#ffffff","secondary-container":"#8a4cfc","on-primary-fixed":"#0f0069","on-tertiary-container":"#93e8ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","margin":"1rem","margin-tablet":"2rem","gutter":"1rem","gutter-desktop":"1.5rem","margin-desktop":"3rem","space-xl":"2.5rem","space-xs":"0.25rem","space-lg":"1.5rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},fontSize:{"label-md":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.02em",fontWeight:"600"}],"body-md":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0em",fontWeight:"400"}],"body-sm":["0.75rem",{lineHeight:"1rem",letterSpacing:"0.01em",fontWeight:"400"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",letterSpacing:"-0.01em",fontWeight:"600"}],"label-sm":["0.6875rem",{lineHeight:"0.875rem",letterSpacing:"0.04em",fontWeight:"700"}],"label-lg":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.01em",fontWeight:"600"}],"headline-lg-mobile":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["1rem",{lineHeight:"1.5rem",letterSpacing:"0em",fontWeight:"400"}],"display-lg":["3rem",{lineHeight:"3.5rem",letterSpacing:"-0.03em",fontWeight:"800"}],"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-lg":["2rem",{lineHeight:"2.5rem",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-6 px-4 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-6"><div class="flex items-center gap-3 px-3"><img alt="Brand logo. - Primary color: #4f46e5
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XOwJ3Ot9bC3XT6LL1aSVdwo9Cmj-p1dDX3j_WbQ0kIAXt2DClsZsxMdx3aquADs8DikuZRmRtQCgTY8o6WMIOP4bQgrKxvFTtVOvIGGKBzjL7bDIjq8sis4Fy73XW4QANa8YTtDzMKC3VG87QjKrvivIV84vB8vxOBcowAE1N0g6cQfVHMJ8n9IxteRBn4gOg4CYmqmsd459bQOUHXuEhYtMRnXD60u2hg1jy_fL4NCkbFRW89f5iY0Yw"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Jujubyte</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-label-lg font-bold rounded-xl"><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant font-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="painel-geral" href="#"><span class="material-symbols-outlined text-xl">dashboard</span>Painel Geral</a><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 transition-colors bg-primary-container text-on-primary font-label-lg font-bold rounded-xl" data-path="meus-produtos" href="#"><span class="material-symbols-outlined text-xl">inventory_2</span>Meus Produtos</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant font-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="minhas-vendas" href="#"><span class="material-symbols-outlined text-xl">shopping_bag</span>Minhas Vendas</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant font-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="descontos-e-ofertas" href="#"><span class="material-symbols-outlined text-xl">loyalty</span>Descontos &amp; Ofertas</a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant font-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="clientes" href="#"><span class="material-symbols-outlined text-xl">people</span>Clientes</a></nav></div><div class="p-3 bg-surface-container-low rounded-xl flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm">support_agent</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-bold">Precisa de Ajuda?</span><span class="font-body-sm text-body-sm text-on-surface-variant">Suporte descomplicado</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-gutter-desktop shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-full max-w-md"><div class="flex items-center w-full bg-surface-container-low rounded-lg px-3 py-2 gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-xl">search</span><input class="bg-transparent border-0 outline-none w-full font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant" placeholder="Pesquisar na minha loja..." type="text"/></div></div><div class="flex items-center gap-4"><a class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md rounded-lg transition-colors" data-path="loja-do-cliente" href="#"><span class="material-symbols-outlined text-lg">storefront</span>Ver Minha Loja (Cliente)</a><div class="flex items-center gap-3 pl-2"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XuLyYraTXkP4vDfA17IEBNTOW5ARmHQH_DT_mBiw7KpKIlikchfIN570Xv_75q2ih1fPEBGhqITFJlKHBqTe0m0AGQxCEKC_HM1QEbD7kdR7lIgrLsof9ZjJDL2I_fKbNt4hHmG4XaJTFpS1F8Bvm7ZZAG04DIi5XlVoGPCKZ3HP7C7AFBHNTxQp1zTI64LODem0a9KVuKgIP9Y5sm0BqzRQhOiD_HbHSaavFeZ28Mw8tkp2jHK7QfgrU"/><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">Loja Jujubyte</span><span class="font-body-sm text-body-sm text-on-surface-variant">Vendedor Oficial</span></div></div></div></header><main class="relative pt-16 bg-background min-h-screen px-margin-desktop py-space-lg"><div class="flex flex-col w-full">
+<!-- Cabeçalho Acolhedor & Ação Primária -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-fixed text-primary">
+<span class="material-symbols-outlined text-lg">inventory_2</span>
+</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Meus Produtos</h1>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Adicione, veja o estoque e edite o preço dos itens da sua loja com facilidade.
+      </p>
+</div>
+<!-- Botão de Cadastro Principal -->
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-lg py-3 rounded-lg shadow-sm hover:shadow-md transition-all active:scale-[0.98]" onclick="openModal('Cadastrar Novo Produto')">
+<span class="material-symbols-outlined text-xl">add_circle</span>
+<span>+ Cadastrar Novo Produto</span>
+</button>
+</div>
+</div>
+<!-- Cards Informativos com Métricas em Linguagem Comum -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">storefront</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Itens Cadastrados</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">8 produtos</span>
+<span class="font-body-sm text-body-sm text-tertiary">Prontos para venda</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">À Venda no Momento</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">7 visíveis</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Visíveis aos clientes</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">warning</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Estoque Baixo</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">2 itens</span>
+<span class="font-body-sm text-body-sm text-error">Acabando em breve</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl">local_shipping</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Valor em Prateleira</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">R$ 14.850</span>
+<span class="font-body-sm text-body-sm text-tertiary">Preço de vitrine total</span>
+</div>
+</div>
+</div>
+<!-- Barra de Filtros, Busca e Abas Limpas -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md mb-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Abas Simples de Categoria -->
+<div class="flex items-center gap-1 overflow-x-auto pb-1 scrollbar-none" id="categoryTabs">
+<button class="category-btn px-4 py-2 rounded-lg font-label-md text-label-md bg-primary text-on-primary font-bold whitespace-nowrap transition-colors" onclick="filterCategory('all', this)">
+          Todos (8)
+        </button>
+<button class="category-btn px-4 py-2 rounded-lg font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors" onclick="filterCategory('Tecnologia', this)">
+          Tecnologia (3)
+        </button>
+<button class="category-btn px-4 py-2 rounded-lg font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors" onclick="filterCategory('Eletroportáteis', this)">
+          Eletroportáteis (2)
+        </button>
+<button class="category-btn px-4 py-2 rounded-lg font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors" onclick="filterCategory('Casa', this)">
+          Casa (2)
+        </button>
+<button class="category-btn px-4 py-2 rounded-lg font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors" onclick="filterCategory('Acessórios', this)">
+          Acessórios (1)
+        </button>
+</div>
+<!-- Campo de Busca Fácil -->
+<div class="relative w-full lg:w-80">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-xl">search</span>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md pl-10 pr-4 py-2 rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="productSearchInput" onkeyup="searchProducts(this.value)" placeholder="Buscar por nome do produto..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Tabela Arejada e Descomplicada de Produtos -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="productsTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md">Produto</th>
+<th class="py-3 px-space-md">Categoria</th>
+<th class="py-3 px-space-md">Preço de Venda</th>
+<th class="py-3 px-space-md">Estoque na Loja</th>
+<th class="py-3 px-space-md text-center">Visibilidade</th>
+<th class="py-3 px-space-md text-right">Ações Rápidas</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<!-- Produto 1: Fone de Ouvido -->
+<tr class="product-row hover:bg-surface-container-low/50 transition-colors" data-category="Tecnologia" data-name="fone de ouvido bluetooth jb-100">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-container flex-shrink-0" data-alt="A modern matte black wireless over-ear headphone displayed on a soft minimalist background with clean studio lighting, high product photography clarity, subtle reflections and soft slate shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUKb5DZIL_7GiZ31rNxPkbA8d2VkWTj1zw-l14OdfgxG4MUVW3fChgZJApZkFfZRSU-HWz7tKHQ22RqswIbZUdMSwo8hkLWTS_aWXBUfJEBHJgedEmAFWtF2xFzBNw6Z2iUF5VorBw-q-8sn7roMYRwJfhC5a1bPk9dgFlyD3US7fG47Rzq2Fy4rtCtk8LlCybebC4gulk4m2hBem1Ud0UWrJZkZP5R5dWk7216esSBSFFLbCT-fij"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Fone de Ouvido Bluetooth JB-100</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cód. interno: FONE-JB10</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-primary font-semibold">
+                Tecnologia
+              </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">R$ 199,90</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-md text-label-md bg-surface-container-high text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                25 unidades disponíveis
+              </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<label class="inline-flex items-center cursor-pointer gap-2">
+<input checked="" class="sr-only peer" onchange="toggleSaleStatus(this)" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary relative"></div>
+<span class="font-label-md text-label-md text-tertiary font-semibold status-label">À venda na loja</span>
+</label>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md font-semibold transition-colors" onclick="openEditDrawer('Fone de Ouvido Bluetooth JB-100', 'Tecnologia', '199,90', '25', true)">
+<span class="material-symbols-outlined text-base">edit</span>
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete(this, 'Fone de Ouvido Bluetooth JB-100')" title="Excluir produto">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Produto 2: Air Fryer Digital -->
+<tr class="product-row hover:bg-surface-container-low/50 transition-colors" data-category="Eletroportáteis" data-name="fritadeira air fryer digital 4l">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-container flex-shrink-0" data-alt="Modern shiny black digital air fryer with touchscreen control panel on a polished bright kitchen countertop, subtle reflections, crisp photography and daylight warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQnvLUDsqWT0alXzxaXaRZJPvhyKyfNbkpczogO5Y4nmvHqSdd2bOZ_OPVDZekTlMqcxperwCK8LcgbeOCmosnNjDFrhoaqHYnOX70hISsFbaQW4mwZxpVcuDNc3Fm_bCp5IpwI0s94xbR4AJ1jkZ93BNVNIFYIJqpOWv1tYuFs6bZ0RHsznwtN96va8bY-u2-MoOdpGU3UZjZKAel9ZKtqgoRb9SqKUy0nKG4whO_P6z91VEY4n5B"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Fritadeira Air Fryer Digital 4L</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cód. interno: AIR-400</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-primary font-semibold">
+                Eletroportáteis
+              </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">R$ 389,00</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-md text-label-md bg-secondary-fixed text-on-secondary-fixed font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Poucas unidades: 4 un
+              </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<label class="inline-flex items-center cursor-pointer gap-2">
+<input checked="" class="sr-only peer" onchange="toggleSaleStatus(this)" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary relative"></div>
+<span class="font-label-md text-label-md text-tertiary font-semibold status-label">À venda na loja</span>
+</label>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md font-semibold transition-colors" onclick="openEditDrawer('Fritadeira Air Fryer Digital 4L', 'Eletroportáteis', '389,00', '4', true)">
+<span class="material-symbols-outlined text-base">edit</span>
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete(this, 'Fritadeira Air Fryer Digital 4L')" title="Excluir produto">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Produto 3: Luminária Inteligente -->
+<tr class="product-row hover:bg-surface-container-low/50 transition-colors" data-category="Casa" data-name="luminária de mesa inteligente led rgb">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-container flex-shrink-0" data-alt="Minimalist modern LED desk lamp casting a warm soft purple glow on a light wooden designer desk, contemporary interior styling, high quality commercial capture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdbqfAzY__673jajJAt71pAeLRSbv5cBZ_pksfobrfJtgZ2qrl_iG37Bh8NL1vI_mBF5a7h8CZzQ74WeYmoPk45-LTzHg-MiGfCrjBivC542S_Z0qvnYaDICyAVPttTNvkELJeYd76qa4_Sx7_VOGIOQ0JYkz8L2q0BU_xnaRhyjgfJGB-_BMfZzJ5vLBLtI5xYUjC2ig5QcTHG5QXsZiAyPVtPS1e4YO7nijRHNZxpBmXkphoesMr"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Luminária de Mesa Inteligente LED RGB</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cód. interno: LUM-RGB01</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-primary font-semibold">
+                Casa
+              </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">R$ 149,00</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-md text-label-md bg-surface-container-high text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                18 unidades disponíveis
+              </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<label class="inline-flex items-center cursor-pointer gap-2">
+<input checked="" class="sr-only peer" onchange="toggleSaleStatus(this)" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary relative"></div>
+<span class="font-label-md text-label-md text-tertiary font-semibold status-label">À venda na loja</span>
+</label>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md font-semibold transition-colors" onclick="openEditDrawer('Luminária de Mesa Inteligente LED RGB', 'Casa', '149,00', '18', true)">
+<span class="material-symbols-outlined text-base">edit</span>
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete(this, 'Luminária de Mesa Inteligente LED RGB')" title="Excluir produto">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Produto 4: Teclado Mecânico Compacto -->
+<tr class="product-row hover:bg-surface-container-low/50 transition-colors" data-category="Tecnologia" data-name="teclado mecânico compacto switch red">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-container flex-shrink-0" data-alt="Compact mechanical gaming keyboard with white keys and subtle indigo backlighting on a smooth clean desk surface, crisp top down angle photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmAcNKu1xtuIuk3wgZmkqSaZw9WpsdQ75NoV31mFymHyNblokaPyHOBN89Yyn8AoE2E1aBbNUovYIgdLPxzd5keoyQ5MFaaz2IXW2WlbFH84Bzydotr1g4K_Ofykf6A9Pv6TDs1ghbSTfvYbK4PCoBxvOnoBrEKmVol4CVO5sXiNzSHMViAhaxifYXdL-f3dZs2jlj0l6bozjrjraXRcATjqQrlJ1afV05cnF6qrl8cVl7sFCohx1Q"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Teclado Mecânico Compacto Switch Red</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cód. interno: TEC-60RED</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-primary font-semibold">
+                Tecnologia
+              </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">R$ 279,50</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-md text-label-md bg-surface-container-high text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                12 unidades disponíveis
+              </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<label class="inline-flex items-center cursor-pointer gap-2">
+<input checked="" class="sr-only peer" onchange="toggleSaleStatus(this)" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary relative"></div>
+<span class="font-label-md text-label-md text-tertiary font-semibold status-label">À venda na loja</span>
+</label>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md font-semibold transition-colors" onclick="openEditDrawer('Teclado Mecânico Compacto Switch Red', 'Tecnologia', '279,50', '12', true)">
+<span class="material-symbols-outlined text-base">edit</span>
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete(this, 'Teclado Mecânico Compacto Switch Red')" title="Excluir produto">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Produto 5: Carregador Sem Fio (Pausado) -->
+<tr class="product-row hover:bg-surface-container-low/50 transition-colors" data-category="Acessórios" data-name="carregador sem fio por indução fast 15w">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-container flex-shrink-0" data-alt="Sleek circular wireless induction phone charging pad on a pristine modern white desk, soft diffused studio light with clean shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZTp9M_USno_Il_m22_Hod5Z3IwsizgQTFNr7xVjiezC91Esaxs-br1z5TcNV3A9D9f5Tv-SOwN68GqJ-iaLbbLf02VrNhGlEVXZXn3A8OdwlPKtUxrAzIVM-lpOpFljGRB3RUiBPvcQyRG9tX5eHlQvI1AQthvZ9vzxvY0GRAR857mkwlVB_vWvUrmkG-gt1q7PwL0kGUwvCoM3teo2RNt77fiPUIUE9MUBLo_Qh1zjnvcdcEp7dL"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Carregador Sem Fio Fast 15W</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cód. interno: CHG-IND15</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-primary font-semibold">
+                Acessórios
+              </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">R$ 89,90</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-md text-label-md bg-secondary-fixed text-on-secondary-fixed font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Poucas unidades: 2 un
+              </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<label class="inline-flex items-center cursor-pointer gap-2">
+<input class="sr-only peer" onchange="toggleSaleStatus(this)" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary relative"></div>
+<span class="font-label-md text-label-md text-outline font-semibold status-label">Pausado na loja</span>
+</label>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md font-semibold transition-colors" onclick="openEditDrawer('Carregador Sem Fio Fast 15W', 'Acessórios', '89,90', '2', false)">
+<span class="material-symbols-outlined text-base">edit</span>
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete(this, 'Carregador Sem Fio Fast 15W')" title="Excluir produto">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Dica amigável no rodapé da tabela -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-3 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">lightbulb</span>
+<span><strong>Dica Jujubyte:</strong> Itens com a chave "À venda" ligada aparecem na hora para os compradores que acessarem seu link.</span>
+</div>
+<span class="text-label-md font-label-md text-on-surface">Mostrando 5 de 8 produtos</span>
+</div>
+</div>
+<!-- DRAWER / MODAL LATERAL AMIGÁVEL: 'EDITAR PRODUTO' -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none flex justify-end" id="productDrawerBackdrop">
+<div class="bg-surface-container-lowest w-full max-w-xl h-full shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 overflow-y-auto" id="productDrawer">
+<!-- Cabeçalho do Drawer -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">edit_note</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="drawerTitle">Editar Produto</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Altere dados simples do produto sem complicação</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="closeEditDrawer()" title="Fechar formulário">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<!-- Corpo do Formulário: Linguagem 100% Cotidiana -->
+<form class="p-space-lg flex flex-col gap-space-lg flex-1" id="productForm">
+<!-- Campo 1: Nome do Produto -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+            Nome do Produto
+            <span class="text-error">*</span>
+</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-2.5 rounded-lg outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="inputProductName" placeholder="Ex: Fone de Ouvido Bluetooth JB-100" type="text" value="Fone de Ouvido Bluetooth JB-100"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">info</span>
+            Nome como seus clientes verão na loja
+          </span>
+</div>
+<!-- Campo 2: Categoria -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+            Categoria do Produto
+            <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-2.5 rounded-lg outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="inputProductCategory">
+<option value="Tecnologia">Tecnologia e Celulares</option>
+<option value="Eletroportáteis">Eletroportáteis</option>
+<option value="Casa">Casa e Decoração</option>
+<option value="Acessórios">Acessórios em Geral</option>
+<option value="Outros">Outras categorias</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant pointer-events-none text-xl">expand_more</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ajuda o cliente a encontrar o produto mais rápido</span>
+</div>
+<!-- Linha Dupla: Preço e Estoque -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Preço de Venda -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+              Preço de Venda (R$)
+              <span class="text-error">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 font-label-md text-label-md text-on-surface-variant font-bold">R$</span>
+<input class="w-full bg-surface-container-low text-on-surface font-headline-sm text-headline-sm font-bold pl-10 pr-3 py-2 rounded-lg outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="inputProductPrice" placeholder="0,00" type="text" value="199,90"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Quanto o comprador vai pagar</span>
+</div>
+<!-- Quantidade em Estoque com Botões +/- Simples -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+              Quantidade em Estoque
+              <span class="text-error">*</span>
+</label>
+<div class="flex items-center bg-surface-container-low rounded-lg p-1">
+<button class="w-10 h-9 rounded-md bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors font-bold shadow-sm" onclick="adjustStock(-1)" type="button">
+                -
+              </button>
+<input class="w-full bg-transparent text-center font-headline-sm text-headline-sm font-bold text-on-surface outline-none" id="inputProductStock" min="0" type="number" value="25"/>
+<button class="w-10 h-9 rounded-md bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors font-bold shadow-sm" onclick="adjustStock(1)" type="button">
+                +
+              </button>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Quantas peças você tem para entregar</span>
+</div>
+</div>
+<!-- Campo 3: Fotos do Produto -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold">
+            Fotos do Produto
+          </label>
+<!-- Área de Upload Pontilhada Amigável -->
+<div class="bg-surface-container-low/70 hover:bg-surface-container-high/60 transition-colors rounded-xl p-space-md flex flex-col items-center justify-center text-center cursor-pointer">
+<span class="material-symbols-outlined text-3xl text-primary mb-1">add_photo_alternate</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">
+              Clique para enviar fotos do seu computador ou arraste para cá
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Você pode enviar até 5 fotos bonitas do produto (JPG ou PNG)
+            </span>
+</div>
+<!-- Miniaturas Atuais com Indicador Amigável de Capa -->
+<div class="flex items-center gap-space-sm mt-1 overflow-x-auto pb-1">
+<!-- Foto 1 (Capa) -->
+<div class="relative w-20 h-20 rounded-lg overflow-hidden bg-surface-container-low flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Front angle clean studio photography of wireless over-ear headphone with deep indigo accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmKZhGO6q4huAQv0SidL0akeDjApG0oGnfuBPS-8ZHXE9H6GYbJH1fe9eiUJmEFxq4lM8xZJTot8BaZ3T8cwau32emrxfE-atEC6YUd9WDLBjNEraXqrJPeM3eKOyh_-zTfHkXfLTjOD8WGcOAFS_6FD3nKPLPBTXdbqZgXVtvQaRUAcaqRPwjFycmRoGp4nRPMDb16tieKo4v_XiGPiF0Qu6isUFGnRY-14LyJ3WEyePkIgnAtONT"/>
+<div class="absolute top-1 left-1 bg-primary text-on-primary px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-[9px] uppercase font-bold">Capa</span>
+</div>
+<button class="absolute bottom-1 right-1 w-5 h-5 rounded-full bg-surface-container-lowest/90 text-on-surface flex items-center justify-center text-xs hover:bg-error-container hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[12px]">delete</span>
+</button>
+</div>
+<!-- Foto 2 -->
+<div class="relative w-20 h-20 rounded-lg overflow-hidden bg-surface-container-low flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Side perspective view of sleek headphones resting on a matte surface with soft shadow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD84eW5zGY5LS8WptV0SmmXjOt3TrCIlaEoezrjXVAqUeb1g-oD70pVudKIyCMZs37O22QCnWeeqeP6UiXmz2LBGhpeVV0u3FwXDdaN8YMNlawtJMzEiPDYfChs71PYxx7tu8OtrQ6NISBQAOb_o6ryc460d-VXNuE3ns2bpvkClN31JQAQEtTSmWgLtgwvzT8Bp_h19mAswSA-XhQqNehK4rtzj5TnoVh5gSKYA-cGev6wXF6KRPnh"/>
+<button class="absolute bottom-1 right-1 w-5 h-5 rounded-full bg-surface-container-lowest/90 text-on-surface flex items-center justify-center text-xs hover:bg-error-container hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[12px]">delete</span>
+</button>
+</div>
+<!-- Adicionar mais um slot -->
+<div class="w-20 h-20 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors cursor-pointer flex-shrink-0">
+<span class="material-symbols-outlined text-xl">add</span>
+<span class="font-label-sm text-[10px] mt-0.5 font-bold">+ Foto</span>
+</div>
+</div>
+</div>
+<!-- Chave de Exibição Amigável -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start justify-between gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Exibir este produto na loja online?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Quando ativado, os clientes poderão comprar este item imediatamente no site da sua loja.
+            </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 mt-1">
+<input checked="" class="sr-only peer" id="inputProductActive" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</form>
+<!-- Rodapé com Botões de Ação Clara -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-end gap-space-md sticky bottom-0 z-10">
+<button class="px-5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-lg text-label-lg transition-colors" onclick="closeEditDrawer()" type="button">
+          Cancelar
+        </button>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-xl py-3 rounded-lg shadow-md hover:shadow-lg transition-all active:scale-[0.98]" onclick="saveProduct()" type="button">
+<span class="material-symbols-outlined text-lg">check</span>
+          Salvar Alterações
+        </button>
+</div>
+</div>
+</div>
+<!-- Notificação Amigável Flutuante (Toast) -->
+<div class="fixed bottom-6 right-6 bg-inverse-surface text-inverse-on-surface px-space-lg py-3 rounded-xl shadow-xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 z-50" id="toastNotification">
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl" id="toastIcon">check_circle</span>
+<span class="font-body-md text-body-md font-semibold" id="toastMessage">Alteração salva com sucesso!</span>
+</div>
+</div>
+<script>
+  function openEditDrawer(name, category, price, stock, active) {
+    document.getElementById('drawerTitle').innerText = 'Editar Produto';
+    document.getElementById('inputProductName').value = name;
+    document.getElementById('inputProductCategory').value = category;
+    document.getElementById('inputProductPrice').value = price;
+    document.getElementById('inputProductStock').value = stock;
+    document.getElementById('inputProductActive').checked = active;
+
+    const backdrop = document.getElementById('productDrawerBackdrop');
+    const drawer = document.getElementById('productDrawer');
+    backdrop.classList.remove('opacity-0', 'pointer-events-none');
+    backdrop.classList.add('opacity-100');
+    drawer.classList.remove('translate-x-full');
+  }
+
+  function openModal(title) {
+    document.getElementById('drawerTitle').innerText = title;
+    document.getElementById('inputProductName').value = '';
+    document.getElementById('inputProductPrice').value = '';
+    document.getElementById('inputProductStock').value = '10';
+    document.getElementById('inputProductActive').checked = true;
+
+    const backdrop = document.getElementById('productDrawerBackdrop');
+    const drawer = document.getElementById('productDrawer');
+    backdrop.classList.remove('opacity-0', 'pointer-events-none');
+    backdrop.classList.add('opacity-100');
+    drawer.classList.remove('translate-x-full');
+  }
+
+  function closeEditDrawer() {
+    const backdrop = document.getElementById('productDrawerBackdrop');
+    const drawer = document.getElementById('productDrawer');
+    backdrop.classList.add('opacity-0', 'pointer-events-none');
+    backdrop.classList.remove('opacity-100');
+    drawer.classList.add('translate-x-full');
+  }
+
+  function adjustStock(amount) {
+    const stockInput = document.getElementById('inputProductStock');
+    let current = parseInt(stockInput.value, 10) || 0;
+    current = Math.max(0, current + amount);
+    stockInput.value = current;
+  }
+
+  function toggleSaleStatus(checkbox) {
+    const label = checkbox.parentElement.querySelector('.status-label');
+    if (checkbox.checked) {
+      label.innerText = 'À venda na loja';
+      label.className = 'font-label-md text-label-md text-tertiary font-semibold status-label';
+      showToast('Produto ativado e disponível para compra!');
+    } else {
+      label.innerText = 'Pausado na loja';
+      label.className = 'font-label-md text-label-md text-outline font-semibold status-label';
+      showToast('Produto pausado temporariamente.');
+    }
+  }
+
+  function confirmDelete(button, productName) {
+    if (confirm('Deseja realmente remover "' + productName + '" da sua loja?')) {
+      const row = button.closest('tr');
+      row.style.opacity = '0';
+      setTimeout(() => {
+        row.remove();
+        showToast('Produto removido da sua lista!');
+      }, 250);
+    }
+  }
+
+  function saveProduct() {
+    closeEditDrawer();
+    showToast('Pronto! Informações do produto atualizadas com sucesso.');
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = msg;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3200);
+  }
+
+  function filterCategory(category, button) {
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.className = 'category-btn px-4 py-2 rounded-lg font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors';
+    });
+    button.className = 'category-btn px-4 py-2 rounded-lg font-label-md text-label-md bg-primary text-on-primary font-bold whitespace-nowrap transition-colors';
+
+    const rows = document.querySelectorAll('.product-row');
+    rows.forEach(row => {
+      if (category === 'all' || row.getAttribute('data-category') === category) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  function searchProducts(query) {
+    const filter = query.toLowerCase();
+    const rows = document.querySelectorAll('.product-row');
+    rows.forEach(row => {
+      const name = row.getAttribute('data-name') || '';
+      if (name.includes(filter)) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+</script></main></div></body></html>
