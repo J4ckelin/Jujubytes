@@ -381,6 +381,70 @@ function formatMoney(amount) {
   return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(amount || 0);
 }
 
+// Input Masks & Form Validations
+function maskCPF(value) {
+  if (!value) return '';
+  value = value.replace(/\D/g, '');
+  if (value.length > 11) value = value.slice(0, 11);
+  return value
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+}
+
+function maskPhone(value) {
+  if (!value) return '';
+  value = value.replace(/\D/g, '');
+  if (value.length > 11) value = value.slice(0, 11);
+  if (value.length > 10) {
+    return value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+  } else if (value.length > 5) {
+    return value.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+  } else if (value.length > 2) {
+    return value.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+  } else {
+    return value.replace(/^(\d*)$/, '($1');
+  }
+}
+
+function validateCPF(cpf) {
+  if (!cpf) return false;
+  const cleanCPF = cpf.replace(/\D/g, '');
+  if (cleanCPF.length !== 11) return false;
+  if (/^(\d)\1{10}$/.test(cleanCPF)) return false;
+
+  let sum = 0;
+  let remainder;
+  for (let i = 1; i <= 9; i++) {
+    sum += parseInt(cleanCPF.substring(i - 1, i)) * (11 - i);
+  }
+  remainder = (sum * 10) % 11;
+  if (remainder === 10 || remainder === 11) remainder = 0;
+  if (remainder !== parseInt(cleanCPF.substring(9, 10))) return false;
+
+  sum = 0;
+  for (let i = 1; i <= 10; i++) {
+    sum += parseInt(cleanCPF.substring(i - 1, i)) * (12 - i);
+  }
+  remainder = (sum * 10) % 11;
+  if (remainder === 10 || remainder === 11) remainder = 0;
+  if (remainder !== parseInt(cleanCPF.substring(10, 11))) return false;
+
+  return true;
+}
+
+function validatePhone(phone) {
+  if (!phone) return false;
+  const digits = phone.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 11;
+}
+
+function validateEmail(email) {
+  if (!email) return false;
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email.toLowerCase());
+}
+
 // VIEW SWITCHER LOGIC
 function switchView(viewName) {
   state.currentView = viewName;
@@ -751,16 +815,40 @@ function closeCheckoutModal() {
 
 async function submitCheckout(e) {
   e.preventDefault();
+
+  const custName = document.getElementById('cust-name').value.trim();
+  const custEmail = document.getElementById('cust-email').value.trim();
+  const custCpf = document.getElementById('cust-cpf').value.trim();
+  const custPhone = document.getElementById('cust-phone').value.trim();
+  const custAddress = document.getElementById('cust-address').value.trim();
+
+  // Validations
+  if (!custName) {
+    showToast('Por favor, informe seu nome completo.', 'error');
+    return;
+  }
+  if (!validateEmail(custEmail)) {
+    showToast('E-mail inválido! Por favor verifique o e-mail digitado.', 'error');
+    return;
+  }
+  if (!validateCPF(custCpf)) {
+    showToast('CPF inválido! Por favor informe um CPF verdadeiro.', 'error');
+    return;
+  }
+  if (!validatePhone(custPhone)) {
+    showToast('Telefone inválido! Informe com DDD (Ex: (11) 99999-8888).', 'error');
+    return;
+  }
+  if (!custAddress) {
+    showToast('Por favor, informe o endereço de entrega.', 'error');
+    return;
+  }
+
   const btn = document.getElementById('btn-submit-order');
   btn.disabled = true;
   btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Processando...`;
 
   try {
-    const custName = document.getElementById('cust-name').value.trim();
-    const custEmail = document.getElementById('cust-email').value.trim();
-    const custPhone = document.getElementById('cust-phone').value.trim();
-    const custAddress = document.getElementById('cust-address').value.trim();
-
     // 1. Create or query Customer
     const existingCust = state.customers.find((c) => c.email.toLowerCase() === custEmail.toLowerCase());
     let customerId = existingCust?.id || `cust-${Date.now()}`;
@@ -769,13 +857,17 @@ async function submitCheckout(e) {
       try {
         const newCustArr = await supabaseApi('customers', {
           method: 'POST',
-          body: [{ id: customerId, name: custName, email: custEmail, phone: custPhone, address: custAddress }]
+          body: [{ id: customerId, name: custName, email: custEmail, cpf: custCpf, phone: custPhone, address: custAddress }]
         });
         if (newCustArr) customerId = newCustArr[0].id;
       } catch (err) {
         console.warn('Using local customer state:', err.message);
       }
-      state.customers.push({ id: customerId, name: custName, email: custEmail, phone: custPhone, address: custAddress });
+      state.customers.push({ id: customerId, name: custName, email: custEmail, cpf: custCpf, phone: custPhone, address: custAddress });
+    } else {
+      existingCust.cpf = custCpf;
+      existingCust.phone = custPhone;
+      existingCust.address = custAddress;
     }
 
     // 2. Calculate Totals
@@ -1035,7 +1127,7 @@ function renderAdminProductsHTML() {
         </div>
         <button onclick="openProductModal()" class="px-4 py-2.5 bg-primary text-on-primary font-bold rounded-xl text-xs shadow-md hover:bg-primary-container transition-all flex items-center gap-1.5 self-start">
           <span class="material-symbols-outlined text-[18px]">add</span>
-          <span>+ Novo Produto</span>
+          <span>Novo Produto</span>
         </button>
       </div>
 
@@ -1244,7 +1336,7 @@ function renderAdminCategoriesHTML() {
         </div>
         <button onclick="openCategoryModal()" class="px-4 py-2.5 bg-primary text-on-primary font-bold rounded-xl text-xs shadow-md hover:bg-primary-container transition-all flex items-center gap-1.5">
           <span class="material-symbols-outlined text-[18px]">add</span>
-          <span>+ Nova Categoria</span>
+          <span>Nova Categoria</span>
         </button>
       </div>
 
@@ -1356,7 +1448,7 @@ function renderAdminCouponsHTML() {
         </div>
         <button onclick="openCouponModal()" class="px-4 py-2.5 bg-primary text-on-primary font-bold rounded-xl text-xs shadow-md hover:bg-primary-container transition-all flex items-center gap-1.5">
           <span class="material-symbols-outlined text-[18px]">add</span>
-          <span>+ Novo Cupom</span>
+          <span>Novo Cupom</span>
         </button>
       </div>
 
@@ -1488,7 +1580,7 @@ function renderAdminPromotionsHTML() {
         </div>
         <button onclick="openPromotionModal()" class="px-4 py-2.5 bg-primary text-on-primary font-bold rounded-xl text-xs shadow-md hover:bg-primary-container transition-all flex items-center gap-1.5">
           <span class="material-symbols-outlined text-[18px]">add</span>
-          <span>+ Nova Promoção</span>
+          <span>Nova Promoção</span>
         </button>
       </div>
 
@@ -1689,9 +1781,15 @@ async function changeOrderStatus(orderId, newStatus) {
 function renderAdminCustomersHTML() {
   return `
     <div class="space-y-6 animate-fade-in max-w-5xl">
-      <div>
-        <h1 class="text-2xl font-extrabold text-on-surface">Base de Clientes Cadastrados</h1>
-        <p class="text-xs text-on-surface-variant">Listagem de compradores registrados no e-commerce.</p>
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl font-extrabold text-on-surface">Base de Clientes Cadastrados</h1>
+          <p class="text-xs text-on-surface-variant">Listagem de compradores registrados e gestão de cadastros.</p>
+        </div>
+        <button onclick="openCustomerRegisterModal()" class="px-4 py-2.5 bg-primary text-on-primary font-bold rounded-xl text-xs shadow-md hover:bg-primary-container transition-all flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[18px]">person_add</span>
+          <span>Novo Cliente</span>
+        </button>
       </div>
 
       <div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high/60 overflow-hidden shadow-sm">
@@ -1699,8 +1797,10 @@ function renderAdminCustomersHTML() {
           <thead class="bg-surface-container-low text-on-surface-variant font-bold uppercase">
             <tr>
               <th class="p-3">Nome</th>
-              <th class="p-3">Contato</th>
+              <th class="p-3">E-mail / Telefone</th>
+              <th class="p-3">CPF</th>
               <th class="p-3">Endereço</th>
+              <th class="p-3 text-right">Ações</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-surface-container-low">
@@ -1709,9 +1809,18 @@ function renderAdminCustomersHTML() {
                 <td class="p-3 font-bold text-on-surface">${c.name}</td>
                 <td class="p-3">
                   <div>${c.email}</div>
-                  <div class="text-[10px] text-on-surface-variant">${c.phone}</div>
+                  <div class="text-[10px] text-on-surface-variant">${c.phone || '-'}</div>
                 </td>
-                <td class="p-3 text-on-surface-variant">${c.address}</td>
+                <td class="p-3 font-mono font-semibold text-on-surface">${c.cpf || '-'}</td>
+                <td class="p-3 text-on-surface-variant">${c.address || '-'}</td>
+                <td class="p-3 text-right space-x-1">
+                  <button onclick="openCustomerRegisterModal('${c.id}')" class="p-1.5 hover:bg-surface-container rounded-lg text-primary" title="Editar">
+                    <span class="material-symbols-outlined text-[18px]">edit</span>
+                  </button>
+                  <button onclick="deleteCustomerAction('${c.id}')" class="p-1.5 hover:bg-surface-container rounded-lg text-error" title="Excluir">
+                    <span class="material-symbols-outlined text-[18px]">delete</span>
+                  </button>
+                </td>
               </tr>
             `).join('')}
           </tbody>
@@ -1719,6 +1828,146 @@ function renderAdminCustomersHTML() {
       </div>
     </div>
   `;
+}
+
+function openCustomerRegisterModal(customerId = null) {
+  state.editingItem = customerId ? state.customers.find((c) => c.id === customerId) : null;
+  const c = state.editingItem;
+
+  const modalHtml = `
+    <div id="cust-modal-backdrop" onclick="if(event.target.id==='cust-modal-backdrop') closeModal('cust-modal')" class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+      <div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+        <div class="p-5 bg-surface-container-low border-b border-surface-container-high flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">person_add</span>
+            <h3 class="font-bold text-lg">${c ? 'Editar Cliente' : 'Cadastro de Cliente'}</h3>
+          </div>
+          <button onclick="closeModal('cust-modal')" class="text-on-surface-variant hover:text-on-surface">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+
+        <form onsubmit="saveCustomerForm(event)" class="p-6 overflow-y-auto space-y-4">
+          <div class="space-y-1">
+            <label class="text-xs font-bold uppercase text-on-surface-variant">Nome Completo *</label>
+            <input type="text" id="modal-cust-name" required value="${c ? c.name : ''}" placeholder="Ex: Maria Souza" class="w-full px-3 py-2 text-sm bg-surface-container-low rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label class="text-xs font-bold uppercase text-on-surface-variant">E-mail *</label>
+              <input type="email" id="modal-cust-email" required value="${c ? c.email : ''}" placeholder="maria@email.com" class="w-full px-3 py-2 text-sm bg-surface-container-low rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" />
+            </div>
+            <div class="space-y-1">
+              <label class="text-xs font-bold uppercase text-on-surface-variant">CPF *</label>
+              <input type="text" id="modal-cust-cpf" required value="${c ? c.cpf || '' : ''}" placeholder="000.000.000-00" oninput="this.value = maskCPF(this.value)" class="w-full px-3 py-2 text-sm bg-surface-container-low rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" />
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold uppercase text-on-surface-variant">Telefone / WhatsApp *</label>
+            <input type="tel" id="modal-cust-phone" required value="${c ? c.phone || '' : ''}" placeholder="(11) 99999-8888" oninput="this.value = maskPhone(this.value)" class="w-full px-3 py-2 text-sm bg-surface-container-low rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-bold uppercase text-on-surface-variant">Endereço Completo *</label>
+            <textarea id="modal-cust-address" required rows="2" placeholder="Rua, número, bairro, cidade - UF" class="w-full p-3 text-sm bg-surface-container-low rounded-lg focus:outline-none focus:ring-1 focus:ring-primary resize-none">${c ? c.address || '' : ''}</textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3 bg-primary text-on-primary font-bold text-sm rounded-xl shadow-md hover:bg-primary-container transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">save</span>
+            <span>${c ? 'Salvar Alterações' : 'Concluir Cadastro'}</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  `;
+
+  closeModal('cust-modal');
+  const container = document.createElement('div');
+  container.id = 'cust-modal';
+  container.innerHTML = modalHtml;
+  document.body.appendChild(container);
+}
+
+async function saveCustomerForm(e) {
+  e.preventDefault();
+  const name = document.getElementById('modal-cust-name').value.trim();
+  const email = document.getElementById('modal-cust-email').value.trim();
+  const cpf = document.getElementById('modal-cust-cpf').value.trim();
+  const phone = document.getElementById('modal-cust-phone').value.trim();
+  const address = document.getElementById('modal-cust-address').value.trim();
+
+  // Validations
+  if (!name) {
+    showToast('Por favor, informe o nome completo.', 'error');
+    return;
+  }
+  if (!validateEmail(email)) {
+    showToast('Por favor, insira um e-mail válido.', 'error');
+    return;
+  }
+  if (!validateCPF(cpf)) {
+    showToast('CPF inválido! Por favor verifique o número digitado.', 'error');
+    return;
+  }
+  if (!validatePhone(phone)) {
+    showToast('Telefone inválido! Digite com DDD (Ex: (11) 99999-8888).', 'error');
+    return;
+  }
+  if (!address) {
+    showToast('Por favor, informe o endereço completo.', 'error');
+    return;
+  }
+
+  try {
+    if (state.editingItem) {
+      state.editingItem.name = name;
+      state.editingItem.email = email;
+      state.editingItem.cpf = cpf;
+      state.editingItem.phone = phone;
+      state.editingItem.address = address;
+
+      try {
+        await supabaseApi(`customers?id=eq.${state.editingItem.id}`, {
+          method: 'PATCH',
+          body: { name, email, cpf, phone, address }
+        });
+      } catch (err) { console.warn(err); }
+
+      showToast('Cliente atualizado com sucesso!');
+    } else {
+      const custId = `cust-${Date.now()}`;
+      const newCustObj = { id: custId, name, email, cpf, phone, address };
+      state.customers.unshift(newCustObj);
+
+      try {
+        await supabaseApi('customers', {
+          method: 'POST',
+          body: [newCustObj]
+        });
+      } catch (err) { console.warn(err); }
+
+      showToast('Cliente cadastrado com sucesso!');
+    }
+
+    closeModal('cust-modal');
+    processStateData();
+    renderCurrentView();
+  } catch (err) {
+    showToast(err.message, 'error');
+  }
+}
+
+async function deleteCustomerAction(custId) {
+  if (!confirm('Deseja realmente excluir este cliente?')) return;
+  state.customers = state.customers.filter((c) => c.id !== custId);
+  try {
+    await supabaseApi(`customers?id=eq.${custId}`, { method: 'DELETE' });
+  } catch (err) { console.warn(err); }
+  showToast('Cliente excluído com sucesso!');
+  processStateData();
+  renderCurrentView();
 }
 
 // Modal Helper
